@@ -7,6 +7,7 @@ nav {
   margin: 0;
   border-bottom: 0px solid #8e6c88;
   left: 0px;
+  z-index: 20;
 }
 
 
@@ -35,11 +36,16 @@ nav li, nav li a {
 
 .active {
   background-color: #8e6c88;
-  color: #000;
+  color: white;
   padding: 1rem;
   font-weight: bold;
 }
 
+.imgcenter {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
 
 body {
   margin: 40px;
@@ -76,6 +82,7 @@ h1 {
 }
 h2 {
    font-family: 'Roboto Slab', serif;
+   text-transform: uppercase;
 }
 h3 {
   color: darkgrey;
@@ -113,6 +120,68 @@ a:active {
 }
 
 
+.skip {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+}
+
+.skip:focus {
+  width: unset;
+  height: unset;
+  position: relative;
+  padding: unset;
+  margin: unset;
+  font-size: 2rem;
+}
+
+.button_holder {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+button {
+  background-color: #8e6c88;
+  border-color: lightgray;
+  min-width: 5rem;
+  border-radius: 5pt;
+  color:  white;
+  font-weight: bold;
+  font-family: 'Roboto Slab', serif;
+}
+
+.gallery-image {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+  margin: 1rem auto;
+  width: 100%;
+  max-width: 1000px;
+}
+
+.gallery-image img {
+  width: 100%;
+}
+
+figcaption {
+margin: 0.5rem;
+font-family: 'Roboto', sans-serif;
+}
+
+.hideThis {
+  display: none;
+}
+
+html.sr  .load-hidden {
+  visibility: hidden;
+}
+
 .location-holder, .media-holder {
   width: 100%;
   margin: 4rem 0;
@@ -142,7 +211,7 @@ a:active {
 @media (min-width: 555px) {
 
   .media-holder {
-    flex-direction: row;
+    flex-direction: column;
   }
 
   .image-holder {
@@ -176,7 +245,7 @@ a:active {
 @media (min-width: 800px) {
 
   .image-holder {
-    width: 500px;
+    width: 250px;
   }
 
   .media-list .text-holder {
@@ -184,15 +253,15 @@ a:active {
   }
 
   nav li {
-    width: 30%;
-    background-color: #3c98d3;
+    width: 25%;
+    background-color: lightgray;
   }
   body {
       background-color: #6fa8dc;
     }
   
   footer {
-    background-color: #3c98d3;
+    background-color: #63c3f2;
   }
 }
 
@@ -204,7 +273,7 @@ a:active {
     }
   
   footer {
-    background-color: #f4cccc;
+    background-color: #63c3f2;
   }
 
   nav ul
@@ -226,7 +295,7 @@ a:active {
 }
 
 .media-holder {
-  flex-direction: row;
+  flex-direction: column;
 }
 
 .media-list .text-holder {
